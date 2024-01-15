@@ -1,51 +1,82 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
+
 {% block content %}
-            <!-- Projects Section-->
-            <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+
+    <!-- member Section-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-5 mx-auto">
+                <!-- Header text content-->
+                <div class="text-center text-xxl-start">
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/resume">Soleh</a>
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/resume">Fadzli</a>
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/resume">Anuar</a>
                     </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <!-- Project Card 1-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Project Name 1</h2>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam!</p>
-                                        </div>
-                                        <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
-                                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section-->
+    <section class="py-5">
+        <div class="container px-5 mb-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Hobby</span></h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <!-- Project Card 1-->
+                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">Going To The Gym</h2>
+                                    <p>Dedicated gym enthusiast with a passion for fitness and a disciplined mindset.
+                                        Regular workouts not only keep me physically fit but also enhance my mental
+                                        focus, a
+                                        quality crucial in programming. The discipline cultivated in the gym seamlessly
+                                        translates into my work ethic, making me a well-rounded and resilient candidate
+                                        for
+                                        a programming position.</p>
                                 </div>
+                                <img src="../static/assets/hobby1_fadzli.png" class="img-fluid mt-3"
+                                     style="max-width: 300px; border-radius: 50%;">
                             </div>
-                            <!-- Project Card 2-->
-                            <div class="card overflow-hidden shadow rounded-4 border-0">
-                                <div class="card-body p-0">
-                                    <div class="d-flex align-items-center">
-                                        <div class="p-5">
-                                            <h2 class="fw-bolder">Project Name 2</h2>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima saepe recusandae libero, iste ad asperiores! Explicabo commodi quo itaque! Ipsam!</p>
-                                        </div>
-                                        <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
-                                    </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2-->
+                    <div class="card overflow-hidden shadow rounded-4 border-0">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">Drawing</h2>
+                                    <p>Passionate about drawing, I use this creative outlet to express thoughts and
+                                        emotions. Through sketches and illustrations, I not only find personal
+                                        fulfillment
+                                        but also enhance my problem-solving skills, valuable in the analytical world of
+                                        programming. The ability to visualize ideas seamlessly transitions into my
+                                        coding
+                                        endeavors, shaping me into a well-rounded candidate in the programming
+                                        landscape.</p>
                                 </div>
+                                <img src="../static/assets/hobby2_fadzli.png" class="img-fluid mt-3"
+                                     style="max-width: 300px; border-radius: 50%;">
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Call to action section-->
-            <section class="py-5 bg-gradient-primary-to-secondary text-white">
-                <div class="container px-5 my-5">
-                    <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </body>
-    {% endblock %}
-</html>
+            </div>
+        </div>
+    </section>
+    <!-- Call to action section-->
+    <section class="py-5 bg-gradient-primary-to-secondary text-white">
+        <div class="container px-5 my-5">
+            <div class="text-center">
+                <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
