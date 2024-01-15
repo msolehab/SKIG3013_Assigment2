@@ -22,6 +22,9 @@ def portfolio():
 def contact():
     return render_template('contact.html')
 
+@app.route('/resumeNuar') #to Anuar resume
+def resumenuar():
+    return render_template('resumeAnuar.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
