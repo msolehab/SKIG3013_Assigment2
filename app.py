@@ -10,24 +10,15 @@ app.config["SECRET_KEY"]=os.urandom(32)
 app.config["DEBUG"]=True
 db=SQLAlchemy(app)
 
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
+    subject = db.Column(db.String(100), nullable=False)
+    message = db.Column(db.String(500), nullable=False)
 
-def create_table():
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    create_table_query = '''
-    CREATE TABLE IF NOT EXISTS contact(
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL,
-      subject TEXT NOT NULL,
-      message TEXT NOT NULL
-    )
-    '''
-    cursor.execute(create_table_query)
-    conn.commit()
-
-create_table()  # Call this function when your application starts
-
+# Create all tables in the database (if they don't exist yet)
+db.create_all()
 
 @app.route('/index')  # Homepage
 def home():
