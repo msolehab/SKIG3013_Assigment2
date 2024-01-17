@@ -1,14 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
-import os
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-# Get the absolute path to the directory where your Flask application is located
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///mydatabase_1.db'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.config["SECRET_KEY"]=os.urandom(32)
+app.config["DEBUG"]=True
+db=SQLAlchemy(app)
 
-# Use the absolute path to your database file
-db_path = os.path.join(BASE_DIR, "mydatabase_1.db")
 
 def create_table():
     conn = sqlite3.connect(db_path)
@@ -48,17 +49,14 @@ def contact():
       subject = request.form.get("subject")
       message = request.form.get("message")
 
-      conn = sqlite3.connect('mydatabase_1.db')  # Connect to the database
-      cursor = conn.cursor()
-      #query
-      insert_query = '''
-        INSERT INTO contact (name, email, subject, message)
-        VALUES (?, ?, ?, ?);
-        '''
-      cursor.execute(insert_query, (name, email, subject, message))
-      conn.commit()
+      # Create a new Contact
+      contact = Contact(name=name, email=email, subject=subject, message=message)
 
-      if cursor.rowcount > 0:
+      # Add the new Contact to the session and commit it
+      db.session.add(contact)
+      db.session.commit()
+
+      if contact.id is not None:
         message = "Message sent!"
         return render_template("contact.html", message=message)
       else:
