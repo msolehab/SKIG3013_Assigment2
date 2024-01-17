@@ -18,7 +18,8 @@ class Contact(db.Model):
     message = db.Column(db.String(500), nullable=False)
 
 # Create all tables in the database (if they don't exist yet)
-db.create_all()
+with app.app_context():
+    db.create_all()
 
 @app.route('/index')  # Homepage
 def home():
