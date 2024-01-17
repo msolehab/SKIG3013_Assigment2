@@ -30,5 +30,9 @@ def resumenuar():
 def hobbynuar():
     return render_template('hobbyAnuar.html')
 
+@app.route('/resumeSoleh') #to Anuar resume
+def resumesoleh():
+    return render_template('resumeSoleh.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
