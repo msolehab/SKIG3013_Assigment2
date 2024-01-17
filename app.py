@@ -1,6 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
+import os
 
+# Get the absolute path to the directory where your Flask application is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Use the absolute path to your database file
+db_path = os.path.join(BASE_DIR, "mydatabase_1.db")
 app = Flask(__name__)
 
 @app.route('/index')  # Homepage
