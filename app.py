@@ -1,14 +1,30 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
-import os
-from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///mydatabase_1.db'
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
-app.config["SECRET_KEY"]=os.urandom(32)
-app.config["DEBUG"]=True
-db=SQLAlchemy(app)
+# Get the absolute path to the directory where your Flask application is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Use the absolute path to your database file
+db_path = os.path.join(BASE_DIR, "mydatabase_1.db")
+
+def create_table():
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    create_table_query = '''
+    CREATE TABLE IF NOT EXISTS contact(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      subject TEXT NOT NULL,
+      message TEXT NOT NULL
+    )
+    '''
+    cursor.execute(create_table_query)
+    conn.commit()
+
+create_table()  # Call this function when your application starts
 
 
 @app.route('/index')  # Homepage
