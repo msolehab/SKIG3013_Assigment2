@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 import os
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///mydatabase_1.db'
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
+app.config["SECRET_KEY"]=os.urandom(32)
+app.config["DEBUG"]=True
+db=SQLAlchemy(app)
 
-# Get the absolute path to the directory where your Flask application is located
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Use the absolute path to your database file
-db_path = os.path.join(BASE_DIR, "mydatabase_1.db")
 
 @app.route('/index')  # Homepage
 def home():
