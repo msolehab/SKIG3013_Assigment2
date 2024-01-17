@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!-- member Section-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-5 mx-auto">
+                <!-- Header text content-->
+                <div class="text-center text-xxl-start">
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/resume">Soleh</a>
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/hobby">Fadzli</a>
+                        <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/hobbyNuar">Anuar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section-->
+    <section class="py-5">
+        <div class="container px-5 mb-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Hobby</span></h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+                    <!-- Project Card 1-->
+                    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">Street @ Nature Photography</h2>
+                                    <p>Passionate about photography with a dedicated mindset and a keen eye for detail.
+                                        Regular photo sessions not only keep my creative skills sharp but also enhance
+                                        my ability to focus, a quality crucial in the field of visual storytelling. The
+                                        discipline cultivated in photography seamlessly translates into my work ethic,
+                                        making me a well-rounded and resilient candidate for a creative position in visual
+                                        arts or photography-related roles.</p>
+                                </div>
+                                <img src="../static/assets/hobby1_anuar.png" class="img-fluid mt-3"
+                                     style="max-width: 300px; border-radius: 50%;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2-->
+                    <div class="card overflow-hidden shadow rounded-4 border-0">
+                        <div class="card-body p-0">
+                            <div class="d-flex align-items-center">
+                                <div class="p-5">
+                                    <h2 class="fw-bolder">Reading</h2>
+                                    <p>Enthusiastic reader with a passion for literature and a disciplined approach to
+                                        intellectual pursuits. Regular engagement with books not only enriches my knowledge
+                                        but also enhances my cognitive abilities, a quality crucial in problem-solving and
+                                        analytical thinking. The discipline cultivated through reading seamlessly translates
+                                        into my work ethic, making me a well-rounded and adaptable candidate for positions that
+                                        require strong analytical skills and a love for continuous learning.</p>
+                                </div>
+                                <img src="../static/assets/hobyy2_anuar.jpeg" class="img-fluid mt-3"
+                                     style="max-width: 300px; border-radius: 50%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Call to action section-->
+    <section class="py-5 bg-gradient-primary-to-secondary text-white">
+        <div class="container px-5 my-5">
+            <div class="text-center">
+                <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+                <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact us</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
