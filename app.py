@@ -26,5 +26,9 @@ def contact():
 def resumenuar():
     return render_template('resumeAnuar.html')
 
+@app.route('/hobbyNuar') #to Anuar resume
+def hobbynuar():
+    return render_template('hobbyAnuar.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
