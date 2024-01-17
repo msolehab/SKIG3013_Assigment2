@@ -1,7 +1,6 @@
-
 {% extends "base.html" %}
 {% block content %}
-<link href="..static/css/contact.css" rel="stylesheet">
+<link href="../static/css/contact.css" rel="stylesheet">
   <main id="main">
 
     <!-- ======= Contact Section ======= -->
@@ -32,13 +31,13 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>anuarulsofian@gmail.com</p><p>fadzlinaim@gmail.com</p>
+                <p>anuarulsofian@gmail.com</p><p>fadzlinaim@gmail.com</p><p>muhdsolehabmajid@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+6011 621 99220</p><p>+6019 446 4046</p>
+                <p>+6011 621 99220</p><p>+6019 446 4046</p><p>+6019 525 3994</p>
               </div>
 
             </div>
@@ -47,7 +46,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="{{url_for("contact")}}" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -62,12 +61,12 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <script>
+              {% if message %}
+                alert("{{ message }}");
+              {% endif %}
+              </script>
             </form>
 
           </div>
@@ -79,8 +78,6 @@
 
   </main><!-- End #main -->
         {% endblock %}
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+
+
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
