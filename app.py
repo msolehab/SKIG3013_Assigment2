@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 app = Flask(__name__)
 
 
-@app.route('/')  # Homepage
+@app.route('/index')  # Homepage
 def home():
     return render_template('index.html')
 
@@ -37,6 +37,10 @@ def resumesoleh():
 @app.route('/hobbySoleh') #to Anuar resume
 def hobbysoleh():
     return render_template('hobbySoleh.html')
+
+@app.route('/') #to Anuar resume
+def landing():
+    return render_template('landing.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
